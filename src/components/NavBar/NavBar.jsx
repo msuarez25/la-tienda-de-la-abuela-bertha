@@ -1,4 +1,5 @@
 import React from "react";
+import CartWidget from "../CartWidget/CartWidget";
 import Logo from "../../assets/images/logo.png";
 
 const NavBar = (props) => {
@@ -6,7 +7,7 @@ const NavBar = (props) => {
     <nav className={`navbar navbar-expand-lg ${props.navTheme}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img src={Logo} alt="La Tienda de la Abuela Bertha" />
+          <img src={Logo} alt={props.logoAlt} />
         </a>
         <button
           className="navbar-toggler"
@@ -23,7 +24,7 @@ const NavBar = (props) => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 pt-2 pt-lg-0">
             <li className="nav-item mx-lg-3 mb-2 mb-lg-0">
               <a className="nav-link active" aria-current="page" href="#">
-                Home
+                Inicio
               </a>
             </li>
             <li className="nav-item mx-lg-3 mb-2 mb-lg-0">
@@ -56,6 +57,7 @@ const NavBar = (props) => {
               </ul>
             </li>
           </ul>
+          <CartWidget mensajeCarrito='Carrito Vacio'/>
         </div>
       </div>
     </nav>
