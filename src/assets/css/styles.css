@@ -1,3 +1,14 @@
-.navbar-brand img{
-    width:200px;
+.navbar-brand img {
+  width: 200px;
+}
+
+.badge-dark {
+  background-color: #212529;
+  border-radius: 50%;
+  padding: 0;
+  height: 15px;
+  min-width: 15px;
+  padding: 2px 0 1px;
+  font-size: 10px;
+  margin-left: 3px;
 }

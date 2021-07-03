@@ -2,12 +2,12 @@ import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import Logo from "../../assets/images/logo.png";
 
-const NavBar = (props) => {
+const NavBar = ({navTheme,logoAlt}) => {
   return (
-    <nav className={`navbar navbar-expand-lg ${props.navTheme}`}>
+    <nav className={`navbar navbar-expand-lg ${navTheme}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img src={Logo} alt={props.logoAlt} />
+          <img src={Logo} alt={logoAlt} />
         </a>
         <button
           className="navbar-toggler"
