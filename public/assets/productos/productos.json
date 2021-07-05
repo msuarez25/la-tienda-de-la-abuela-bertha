@@ -1,0 +1,144 @@
+[
+  {
+    "id": "60e37ffe05fc7d60c958fcaa",
+    "guid": "c572e0c7-8dbb-4021-bfa0-cc1bb0c02a22",
+    "price": "$1,215.70",
+    "picture": "/assets/images/pintura.jpeg",
+    "author": "Flynn Nolan",
+    "name_of_product": "Pintura 1",
+    "gender": "male",
+    "description": "Consequat exercitation deserunt in officia aute tempor. Non in aute mollit mollit irure minim tempor exercitation. Qui adipisicing ipsum ex dolor. Fugiat commodo et magna sint fugiat pariatur mollit qui culpa consectetur.\r\n",
+    "registered": "2018-12-07T04:21:27 +05:00",
+    "latitude": 50.083372,
+    "longitude": -86.170275,
+    "stock":3,
+    "tags": [
+      "Pintura",
+      "Oleo"
+    ]
+  },
+  {
+    "id": "60e37ffe596c7a87399a4750",
+    "guid": "22c3bb62-2093-4833-929d-4ac46e0d1d56",
+    "price": "$3,765.00",
+    "picture": "/assets/images/pintura2.jpeg",
+    "author": "Marva Pruitt",
+    "name_of_product": "Pintura 2",
+    "gender": "female",
+    "description": "Elit incididunt fugiat ullamco qui. Est qui sit anim proident anim nisi cillum eu occaecat. Ut tempor in esse sit nisi voluptate dolore deserunt fugiat aute irure minim proident. Fugiat non labore aliqua ullamco consequat tempor aliqua officia duis aliqua. Aliquip excepteur nulla amet pariatur aute cillum ut ex consectetur occaecat. Adipisicing ullamco pariatur dolor laboris Lorem ea ut cupidatat.\r\n",
+    "registered": "2016-09-08T11:19:25 +04:00",
+    "latitude": 54.369892,
+    "longitude": 37.746836,
+    "stock":1,
+    "tags": [
+      "Pintura",
+      "Oleo"
+    ]
+  },
+  {
+    "id": "60e37ffe9553793757445cfb",
+    "guid": "80d10de5-6078-4064-8a60-bcdb55070b07",
+    "price": "$3,086.64",
+    "picture": "/assets/images/pintura3.jpeg",
+    "author": "Trudy Manning",
+    "name_of_product": "Pintura 3",
+    "gender": "female",
+    "description": "Reprehenderit nisi commodo labore voluptate velit nisi labore nostrud reprehenderit cillum id cupidatat sit. Aliquip labore fugiat non ut sit cillum minim in commodo deserunt incididunt sit tempor. Nostrud velit ipsum dolor ea ex ipsum cupidatat.\r\n",
+    "registered": "2015-08-30T04:36:30 +04:00",
+    "latitude": -26.006328,
+    "longitude": -0.854912,
+    "stock":7,
+    "tags": [
+      "Pintura",
+      "Oleo"
+    ]
+  },
+  {
+    "id": "60e37ffe526800f1202ef1e9",
+    "guid": "28521e5e-be2e-4e66-a74a-5099135d3883",
+    "price": "$1,568.71",
+    "picture": "/assets/images/pintura4.jpeg",
+    "author": "Daniel Aguilar",
+    "name_of_product": "Pintura 4",
+    "gender": "male",
+    "description": "Velit irure consectetur do nostrud commodo deserunt sunt reprehenderit elit. Aliqua veniam deserunt veniam non tempor proident id. Esse labore aute incididunt nostrud Lorem. Eiusmod non eiusmod irure tempor exercitation tempor eu et. Eiusmod amet non ipsum voluptate occaecat. Cupidatat esse pariatur nulla qui non.\r\n",
+    "registered": "2017-05-11T10:33:00 +04:00",
+    "latitude": 72.609054,
+    "longitude": 78.926647,
+    "stock":1,
+    "tags": [
+      "Pintura",
+      "Oleo"
+    ]
+  },
+  {
+    "id": "60e37ffefadb1c8f50520227",
+    "guid": "a0259300-e099-4c53-881b-25f9f1a731fb",
+    "price": "$3,943.80",
+    "picture": "/assets/images/puntillismo.jpeg",
+    "author": "Medina Ferguson",
+    "name_of_product": "Puntillismo",
+    "gender": "male",
+    "description": "Elit reprehenderit dolore officia aliquip dolor qui culpa mollit. Do proident labore proident cupidatat est do sit est sunt est laboris sunt. Ex esse velit do eiusmod adipisicing eu ex. Aliquip minim cillum minim nisi sunt fugiat amet dolor sunt enim magna et sint. Id exercitation nulla fugiat esse nulla quis do.\r\n",
+    "registered": "2017-03-26T11:49:14 +04:00",
+    "latitude": -0.51644,
+    "longitude": -88.006999,
+    "stock":2,
+    "tags": [
+      "Pintura",
+      "Oleo",
+      "Puntillismo"
+    ]
+  },
+  {
+    "id": "60e37ffeb93bb10eebc3619f",
+    "guid": "918b1ea9-4b54-46c1-bb35-90de61426f09",
+    "price": "$2,392.15",
+    "picture": "/assets/images/orfebreria1.webp",
+    "author": "Carpenter Grant",
+    "name_of_product": "Orfebrería 1",
+    "gender": "male",
+    "description": "Laboris nisi dolor aliquip exercitation sunt. Ad veniam dolore enim et nisi nulla esse. Voluptate magna esse cupidatat ipsum tempor aliqua. Reprehenderit laborum est nulla qui irure in mollit irure laborum aliqua. Do sint aliqua est nulla occaecat in.\r\n",
+    "registered": "2015-01-16T12:33:03 +05:00",
+    "latitude": -13.139954,
+    "longitude": -160.200868,
+    "stock":10,
+    "tags": [
+      "Orfebrería"
+    ]
+  },
+  {
+    "id": "60e37ffeb93bb10eebc3619f",
+    "guid": "918b1ea9-4b54-46c1-bb35-90de61426f09",
+    "price": "$3,123.21",
+    "picture": "/assets/images/orfebreria2.jpeg",
+    "author": "Carpenter Grant",
+    "name_of_product": "Orfebrería 2",
+    "gender": "male",
+    "description": "Laboris nisi dolor aliquip exercitation sunt. Ad veniam dolore enim et nisi nulla esse. Voluptate magna esse cupidatat ipsum tempor aliqua. Reprehenderit laborum est nulla qui irure in mollit irure laborum aliqua. Do sint aliqua est nulla occaecat in.\r\n",
+    "registered": "2015-01-16T12:33:03 +05:00",
+    "latitude": -13.139954,
+    "longitude": -160.200868,
+    "stock":2,
+    "tags": [
+      "Orfebrería"
+    ]
+  },
+  {
+    "id": "60e37ffeb93bb10eebc3619f",
+    "guid": "918b1ea9-4b54-46c1-bb35-90de61426f09",
+    "price": "$1,241.51",
+    "picture": "/assets/images/orfebreria3.jpg",
+    "author": "Carpenter Grant",
+    "name_of_product": "Orfebrería 3",
+    "gender": "male",
+    "description": "Laboris nisi dolor aliquip exercitation sunt. Ad veniam dolore enim et nisi nulla esse. Voluptate magna esse cupidatat ipsum tempor aliqua. Reprehenderit laborum est nulla qui irure in mollit irure laborum aliqua. Do sint aliqua est nulla occaecat in.\r\n",
+    "registered": "2015-01-16T12:33:03 +05:00",
+    "latitude": -13.139954,
+    "longitude": -160.200868,
+    "stock":5,
+    "tags": [
+      "Orfebrería"
+    ]
+  }
+]

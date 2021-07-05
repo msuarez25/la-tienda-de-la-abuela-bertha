@@ -1,3 +1,35 @@
-.navbar-brand img{
-    width:200px;
+.navbar-brand img {
+  width: 200px;
+}
+
+.badge-dark {
+  background-color: #212529;
+  border-radius: 50%;
+  padding: 0;
+  height: 15px;
+  min-width: 15px;
+  padding: 2px 0 1px;
+  font-size: 10px;
+  margin-left: 3px;
+}
+
+.img-wrap {
+  width: 100%;
+  padding-bottom: 50%;
+  position: relative;
+}
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.product-list {
+  padding: 50px 0;
+}
+.product-list li {
+  list-style-type: none;
 }
