@@ -11,16 +11,11 @@
     "registered": "2018-12-07T04:21:27 +05:00",
     "latitude": 50.083372,
     "longitude": -86.170275,
+    "stock":3,
     "tags": [
-      "eiusmod",
-      "magna",
-      "elit",
-      "nulla",
-      "voluptate",
-      "ad",
-      "consequat"
-    ],
-    "greeting": "Hello, undefined! You have 9 unread messages."
+      "Pintura",
+      "Oleo"
+    ]
   },
   {
     "id": "60e37ffe596c7a87399a4750",
@@ -34,14 +29,10 @@
     "registered": "2016-09-08T11:19:25 +04:00",
     "latitude": 54.369892,
     "longitude": 37.746836,
+    "stock":1,
     "tags": [
-      "excepteur",
-      "et",
-      "mollit",
-      "nulla",
-      "occaecat",
-      "in",
-      "et"
+      "Pintura",
+      "Oleo"
     ]
   },
   {
@@ -56,16 +47,11 @@
     "registered": "2015-08-30T04:36:30 +04:00",
     "latitude": -26.006328,
     "longitude": -0.854912,
+    "stock":7,
     "tags": [
-      "pariatur",
-      "aliquip",
-      "ut",
-      "labore",
-      "eu",
-      "quis",
-      "veniam"
-    ],
-    "greeting": "Hello, undefined! You have 2 unread messages."
+      "Pintura",
+      "Oleo"
+    ]
   },
   {
     "id": "60e37ffe526800f1202ef1e9",
@@ -79,14 +65,10 @@
     "registered": "2017-05-11T10:33:00 +04:00",
     "latitude": 72.609054,
     "longitude": 78.926647,
+    "stock":1,
     "tags": [
-      "magna",
-      "nostrud",
-      "sint",
-      "sint",
-      "ex",
-      "pariatur",
-      "incididunt"
+      "Pintura",
+      "Oleo"
     ]
   },
   {
@@ -101,16 +83,12 @@
     "registered": "2017-03-26T11:49:14 +04:00",
     "latitude": -0.51644,
     "longitude": -88.006999,
+    "stock":2,
     "tags": [
-      "sit",
-      "non",
-      "duis",
-      "occaecat",
-      "occaecat",
-      "consequat",
-      "enim"
-    ],
-    "greeting": "Hello, undefined! You have 10 unread messages."
+      "Pintura",
+      "Oleo",
+      "Puntillismo"
+    ]
   },
   {
     "id": "60e37ffeb93bb10eebc3619f",
@@ -124,14 +102,9 @@
     "registered": "2015-01-16T12:33:03 +05:00",
     "latitude": -13.139954,
     "longitude": -160.200868,
+    "stock":10,
     "tags": [
-      "pariatur",
-      "nulla",
-      "in",
-      "dolor",
-      "deserunt",
-      "ex",
-      "proident"
+      "Orfebrería"
     ]
   },
   {
@@ -146,14 +119,9 @@
     "registered": "2015-01-16T12:33:03 +05:00",
     "latitude": -13.139954,
     "longitude": -160.200868,
+    "stock":2,
     "tags": [
-      "pariatur",
-      "nulla",
-      "in",
-      "dolor",
-      "deserunt",
-      "ex",
-      "proident"
+      "Orfebrería"
     ]
   },
   {
@@ -168,14 +136,9 @@
     "registered": "2015-01-16T12:33:03 +05:00",
     "latitude": -13.139954,
     "longitude": -160.200868,
+    "stock":5,
     "tags": [
-      "pariatur",
-      "nulla",
-      "in",
-      "dolor",
-      "deserunt",
-      "ex",
-      "proident"
+      "Orfebrería"
     ]
   }
 ]

@@ -13,8 +13,7 @@ function App() {
         <header className="header">
           <NavBar navTheme="navbar-dark bg-dark" logoAlt={nombreTienda} />
         </header>
-        <ItemListContainer mensajeBienvenida={`Bienvenido a ${nombreTienda}`} />
-        <ItemCount stock={9} initial={1} />
+        <ItemListContainer />
       </div>
     </>
   );
