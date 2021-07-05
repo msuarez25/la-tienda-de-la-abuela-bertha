@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import minus from "../../assets/images/minus-solid.svg";
-import plus from "../../assets/images/plus-solid.svg";
 
 const ItemCount = ({ stock, initial }) => {
   const btnDisabled = "btn btn-secondary";
@@ -26,12 +24,12 @@ const ItemCount = ({ stock, initial }) => {
         <div className="col-sm-9 col-md-4 col-lg-3 mx-auto text-center">
           <div className="item-count d-flex text-center form-control justify-content-between">
             <button
-              className={amount == initial ? btnDisabled : "btn btn-danger"}
+              className={amount === initial ? btnDisabled : "btn btn-danger"}
               onClick={onSubtract}
             >
               <img
                 className="d-flex align-items-center"
-                src={minus}
+                src="/assets/images/minus-solid.svg"
                 alt="minus icon"
                 width="15"
                 height="15"
@@ -41,12 +39,12 @@ const ItemCount = ({ stock, initial }) => {
               {amount}
             </span>
             <button
-              className={amount == stock ? btnDisabled : "btn btn-success"}
+              className={amount === stock ? btnDisabled : "btn btn-success"}
               onClick={onAdd}
             >
               <img
                 className="d-flex align-items-center"
-                src={plus}
+                src="/assets/images/plus-solid.svg"
                 alt="plus icon"
                 width="15"
                 height="15"
