@@ -4,24 +4,26 @@ import Item from "../Item/Item";
 const ItemList = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [productos, setItems] = useState([]);
+  const [productos, setProductos] = useState([]);
+  const url = "/assets/productos/productos.json";
 
-  useEffect(() => {
-    fetch("/assets/productos/productos.json")
-      .then((res) => res.json())
+  const getProductos = () => {
+    fetch(url)
+      .then((response) => response.json())
       .then(
-        (result) => {
+        (data) => {
           setIsLoaded(true);
-          setItems(result);
+          setProductos(data);
         },
-        // Nota: es importante manejar errores aquí y no en
-        // un bloque catch() para que no interceptemos errores
-        // de errores reales en los componentes.
         (error) => {
           setIsLoaded(true);
           setError(error);
         }
       );
+  };
+
+  useEffect(() => {
+    getProductos();
   }, []);
 
   if (error) {
@@ -33,6 +35,7 @@ const ItemList = () => {
       <ul className="product-list row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
         {productos.map((producto) => (
           <Item
+            key={producto.id}
             price={producto.price}
             picture={producto.picture}
             name_of_product={producto.name_of_product}
