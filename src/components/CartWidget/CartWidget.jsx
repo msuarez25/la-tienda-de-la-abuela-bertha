@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-  const [carsItemsNumber, updateCarsItemsNumber] = useState(0);
-  const addNumberToCart = (numero) => {
-    updateCarsItemsNumber(numero);
-  };
+  const [carsItemsNumber] = useState(0);
+  // const [carsItemsNumber, updateCarsItemsNumber] = useState(0);
+  // const addNumberToCart = (numero) => {
+  //   updateCarsItemsNumber(numero);
+  // };
   return (
     <Link to="/cart">
       <button
         className="btn btn-warning mb-2 mb-lg-0"
         aria-label="carrito"
-        onClick={addNumberToCart}
+        // onClick={addNumberToCart}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

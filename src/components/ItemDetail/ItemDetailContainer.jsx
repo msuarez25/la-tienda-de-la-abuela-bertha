@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router";
 
 const ItemDetailContainer = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [productos, setProduct] = useState([]);
   const url = "/assets/productos/productos.json";
+  const { id } = useParams();
 
   const getProduct = () => {
     fetch(url)
@@ -13,9 +15,7 @@ const ItemDetailContainer = () => {
       .then(
         (data) => {
           setIsLoaded(true);
-          let product = data.filter((producto) =>
-            getProductByID(producto, "60e37ffeb93bb10eebc3619c")
-          );
+          let product = data.filter((producto) => getProductByID(producto, id));
           setProduct(product);
         },
         (error) => {
@@ -40,7 +40,7 @@ const ItemDetailContainer = () => {
     return <div>Loading...</div>;
   } else {
     return (
-      <div className="product-detail">
+      <div className="product-detail mb-5">
         {productos.map((producto) => (
           <ItemDetail
             key={producto.id}
@@ -51,6 +51,7 @@ const ItemDetailContainer = () => {
             tags={producto.tags}
             stock={producto.stock}
             description={producto.description}
+            autor={producto.author}
           />
         ))}
       </div>

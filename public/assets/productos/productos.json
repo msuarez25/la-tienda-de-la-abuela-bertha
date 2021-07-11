@@ -67,8 +67,7 @@
     "longitude": 78.926647,
     "stock":1,
     "tags": [
-      "Pintura",
-      "Oleo"
+      "Pintura"
     ]
   },
   {
@@ -85,7 +84,6 @@
     "longitude": -88.006999,
     "stock":2,
     "tags": [
-      "Pintura",
       "Oleo",
       "Puntillismo"
     ]

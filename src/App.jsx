@@ -18,25 +18,25 @@ function App() {
           </header>
           <Switch>
             <Route exact path="/">
+              <ItemListContainer />
+            </Route>
+            <Route path="/producto/:id">
               <ItemDetailContainer />
-              {/* <ItemListContainer /> */}
+            </Route>
+            <Route path="/categoria/:tags">
+              <ItemListContainer />
             </Route>
             <Route path="/sobre-la-abuela">
-              <ItemListContainer />
-            </Route>
-            <Route path="/categorias">
-              <ItemListContainer />
-            </Route>
-            <Route path="/pinturas">
-              <ItemListContainer />
-            </Route>
-            <Route path="/orfebreria">
-              <ItemListContainer />
+              <h1>Sobre La Abuela</h1>
             </Route>
             <Route path="/cart">
-              <ItemListContainer />
+              <h1>Carrito</h1>
             </Route>
           </Switch>
+          <footer className="footer text-center py-5 bg-dark text-light">
+            Todos los derechos reservados ©{" "}
+            {new Date().toLocaleString("es-AR", { year: "numeric" })}
+          </footer>
         </BrowserRouter>
       </div>
     </>

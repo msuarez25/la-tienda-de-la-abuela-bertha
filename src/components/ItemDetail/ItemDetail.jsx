@@ -1,6 +1,7 @@
 import React from "react";
 // import { useParams } from "react-router";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({
   id,
@@ -33,8 +34,15 @@ const ItemDetail = ({
                   </div>
                 </div>
                 <div className="d-flex justify-content-between">
-                  <span className="tags">
-                    Categorias: <em>{tags}</em>
+                  <span className="tags d-flex align-items-center">
+                    Categorias:{" "}
+                    {tags.map((tag, index) => (
+                      <Link key={index} to={`/categoria/${tag}`}>
+                        <span className="badge bg-warning text-dark">
+                          {tag}
+                        </span>
+                      </Link>
+                    ))}
                   </span>
                   <span className="author">
                     Autor: <em>{autor}</em>

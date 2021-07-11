@@ -46,12 +46,23 @@ const NavBar = ({ navTheme, logoAlt }) => {
               </Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <Link className="dropdown-item" to="/pinturas">
+                  <Link className="dropdown-item" to="/categoria/Pintura">
                     Pinturas
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/orfebreria">
+                  <Link className="dropdown-item" to="/categoria/Oleo">
+                    Oleo
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/categoria/Puntillismo">
+                    Puntillismo
+                  </Link>
+                </li>
+
+                <li>
+                  <Link className="dropdown-item" to="/categoria/Orfebrería">
                     Orfebrería
                   </Link>
                 </li>
