@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from "react";
-import Item from "../Item/Item";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
-const ItemList = () => {
+const ItemDetailContainer = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [productos, setProductos] = useState([]);
+  const [productos, setProduct] = useState([]);
   const url = "/assets/productos/productos.json";
 
-  const getProductos = () => {
+  const getProduct = () => {
     fetch(url)
       .then((response) => response.json())
       .then(
         (data) => {
           setIsLoaded(true);
-          setProductos(data);
+          let product = data.filter((producto) =>
+            getProductByID(producto, "60e37ffeb93bb10eebc3619c")
+          );
+          setProduct(product);
         },
         (error) => {
           setIsLoaded(true);
@@ -22,8 +25,13 @@ const ItemList = () => {
       );
   };
 
+  const getProductByID = (product, productID) => {
+    return product.id === productID;
+  };
+
   useEffect(() => {
-    getProductos();
+    getProduct();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (error) {
@@ -32,9 +40,9 @@ const ItemList = () => {
     return <div>Loading...</div>;
   } else {
     return (
-      <ul className="product-list row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
+      <div className="product-detail">
         {productos.map((producto) => (
-          <Item
+          <ItemDetail
             key={producto.id}
             id={producto.id}
             price={producto.price}
@@ -42,10 +50,11 @@ const ItemList = () => {
             name_of_product={producto.name_of_product}
             tags={producto.tags}
             stock={producto.stock}
+            description={producto.description}
           />
         ))}
-      </ul>
+      </div>
     );
   }
 };
-export default ItemList;
+export default ItemDetailContainer;
