@@ -67,8 +67,7 @@
     "longitude": 78.926647,
     "stock":1,
     "tags": [
-      "Pintura",
-      "Oleo"
+      "Pintura"
     ]
   },
   {
@@ -85,7 +84,6 @@
     "longitude": -88.006999,
     "stock":2,
     "tags": [
-      "Pintura",
       "Oleo",
       "Puntillismo"
     ]
@@ -108,7 +106,7 @@
     ]
   },
   {
-    "id": "60e37ffeb93bb10eebc3619f",
+    "id": "60e37ffeb93bb10eebc3619c",
     "guid": "918b1ea9-4b54-46c1-bb35-90de61426f09",
     "price": "$3,123.21",
     "picture": "/assets/images/orfebreria2.jpeg",
@@ -125,7 +123,7 @@
     ]
   },
   {
-    "id": "60e37ffeb93bb10eebc3619f",
+    "id": "60e37ffeb93bb10eebc3619d",
     "guid": "918b1ea9-4b54-46c1-bb35-90de61426f09",
     "price": "$1,241.51",
     "picture": "/assets/images/orfebreria3.jpg",

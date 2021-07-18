@@ -1,14 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,300&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer.footer {
+  margin-top: auto;
+  align-self: end;
+  width: 100%;
+}
+
 .navbar-brand img {
   width: 200px;
 }
-
+.badge:hover {
+  background-color: rgb(194, 194, 194) !important;
+}
 .badge-dark {
   background-color: #212529;
   border-radius: 50%;
   padding: 0;
   height: 15px;
   min-width: 15px;
-  padding: 2px 0 1px;
+  padding: 3px 0 1px;
   font-size: 10px;
   margin-left: 3px;
 }
@@ -17,6 +35,9 @@
   width: 100%;
   padding-bottom: 50%;
   position: relative;
+}
+.product-detail .img-wrap {
+  padding-bottom: 60%;
 }
 .img-wrap img {
   width: 100%;
@@ -32,4 +53,17 @@
 }
 .product-list li {
   list-style-type: none;
+}
+.tags a {
+  margin-left: 5px;
+}
+
+.content h2 a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content h2 a:hover {
+  text-decoration: underline;
 }
