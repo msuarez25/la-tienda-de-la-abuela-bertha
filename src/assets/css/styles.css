@@ -3,6 +3,16 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer.footer {
+  margin-top: auto;
+  align-self: end;
+  width: 100%;
+}
 
 .navbar-brand img {
   width: 200px;

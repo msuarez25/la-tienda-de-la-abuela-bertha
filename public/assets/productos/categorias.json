@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1",
+    "path": "pintura",
+    "name": "Pintura",
+    "gender": "male",
+    "description": "Consequat exercitation deserunt in officia aute tempor. Non in aute mollit mollit irure minim tempor exercitation. Qui adipisicing ipsum ex dolor. Fugiat commodo et magna sint fugiat pariatur mollit qui culpa consectetur.\r\n",
+    "registered": "2018-12-07T04:21:27 +05:00"
+  },
+  {
+    "id": "2",
+    "path": "oleo",
+    "name": "Oleo",
+    "gender": "female",
+    "description": "Elit incididunt fugiat ullamco qui. Est qui sit anim proident anim nisi cillum eu occaecat. Ut tempor in esse sit nisi voluptate dolore deserunt fugiat aute irure minim proident. Fugiat non labore aliqua ullamco consequat tempor aliqua officia duis aliqua. Aliquip excepteur nulla amet pariatur aute cillum ut ex consectetur occaecat. Adipisicing ullamco pariatur dolor laboris Lorem ea ut cupidatat.\r\n",
+    "registered": "2016-09-08T11:19:25 +04:00"
+  },
+  {
+    "id": "3",
+    "path": "puntillismo",
+    "name": "Puntillismo",
+    "description": "Elit reprehenderit dolore officia aliquip dolor qui culpa mollit. Do proident labore proident cupidatat est do sit est sunt est laboris sunt. Ex esse velit do eiusmod adipisicing eu ex. Aliquip minim cillum minim nisi sunt fugiat amet dolor sunt enim magna et sint. Id exercitation nulla fugiat esse nulla quis do.\r\n",
+    "registered": "2017-03-26T11:49:14 +04:00"
+  },
+  {
+    "id": "4",
+    "path": "orfebreria",
+    "name": "Orfebrería",
+    "gender": "male",
+    "description": "Laboris nisi dolor aliquip exercitation sunt. Ad veniam dolore enim et nisi nulla esse. Voluptate magna esse cupidatat ipsum tempor aliqua. Reprehenderit laborum est nulla qui irure in mollit irure laborum aliqua. Do sint aliqua est nulla occaecat in.\r\n",
+    "registered": "2015-01-16T12:33:03 +05:00"
+  }
+]

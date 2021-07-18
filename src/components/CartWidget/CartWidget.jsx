@@ -1,19 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../Context/Context";
 
 const CartWidget = () => {
-  const [carsItemsNumber] = useState(0);
-  // const [carsItemsNumber, updateCarsItemsNumber] = useState(0);
-  // const addNumberToCart = (numero) => {
-  //   updateCarsItemsNumber(numero);
-  // };
+  const [carsItemsNumber, updateCarsItemsNumber] = useState(0);
+  const { cartObj } = useContext(Context);
+
+  const amountOfItems = (arr) => {
+    let aoi = 0;
+    arr.forEach((element) => {
+      aoi = aoi + element.amount;
+    });
+    return parseInt(aoi);
+  };
+
+  const addNumberToCart = () => {
+    updateCarsItemsNumber(() => {
+      return amountOfItems(cartObj.products);
+    });
+  };
+  useEffect(() => {
+    addNumberToCart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cartObj]);
   return (
     <Link to="/cart">
-      <button
-        className="btn btn-warning mb-2 mb-lg-0"
-        aria-label="carrito"
-        // onClick={addNumberToCart}
-      >
+      <button className="btn btn-warning mb-2 mb-lg-0" aria-label="carrito">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

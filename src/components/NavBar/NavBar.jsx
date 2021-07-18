@@ -1,7 +1,8 @@
 import React from "react";
-import CartWidget from "../CartWidget/CartWidget";
-import Logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
+import Logo from "../../assets/images/logo.png";
+import CartWidget from "../CartWidget/CartWidget";
+import CategoryNav from "../CategoryNav/CategoryNav";
 
 const NavBar = ({ navTheme, logoAlt }) => {
   return (
@@ -33,41 +34,7 @@ const NavBar = ({ navTheme, logoAlt }) => {
                 Sobre la Abuela
               </Link>
             </li>
-            <li className="nav-item mx-lg-3 mb-2 mb-lg-0 dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="/categorias"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Categorias
-              </Link>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <Link className="dropdown-item" to="/categoria/Pintura">
-                    Pinturas
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/categoria/Oleo">
-                    Oleo
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/categoria/Puntillismo">
-                    Puntillismo
-                  </Link>
-                </li>
-
-                <li>
-                  <Link className="dropdown-item" to="/categoria/Orfebrería">
-                    Orfebrería
-                  </Link>
-                </li>
-              </ul>
-            </li>
+            <CategoryNav />
           </ul>
           <CartWidget mensajeCarrito="Carrito Vacio" />
         </div>
