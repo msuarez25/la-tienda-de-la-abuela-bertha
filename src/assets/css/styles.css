@@ -67,3 +67,16 @@ footer.footer {
 .content h2 a:hover {
   text-decoration: underline;
 }
+
+.page-transition {
+  opacity: 0;
+  animation: fadeIn 0.9s forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
