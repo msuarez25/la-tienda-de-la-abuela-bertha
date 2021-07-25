@@ -1,7 +1,15 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../../Context/Context";
 
-const AddAmount = ({ initial, stock, productID, setCartState }) => {
+const AddAmount = ({
+  initial,
+  stock,
+  productID,
+  setCartState,
+  picture,
+  name_of_product,
+  price,
+}) => {
   const { setCartObj } = useContext(Context);
   const { cartObj } = useContext(Context);
   const btnDisabled = "btn btn-secondary";
@@ -28,12 +36,18 @@ const AddAmount = ({ initial, stock, productID, setCartState }) => {
     setCartState(true);
     if (!productExist(productID)) {
       setCartObj({
-        products: [...cartObj.products, { id: productID, amount: amount }],
+        products: [
+          ...cartObj.products,
+          {
+            id: productID,
+            picture: picture,
+            name_of_product: name_of_product,
+            price: price,
+            amount: amount,
+          },
+        ],
       });
     } else {
-      setCartObj({
-        products: [...cartObj.products, { id: productID, amount: amount }],
-      });
       alert(
         "Ya tienes este producto en tu carrito. Si deseas modificar la cantidad presiona el boton de editar compra."
       );

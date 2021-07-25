@@ -3,7 +3,14 @@ import React, { useState } from "react";
 import AddAmount from "./AddAmount";
 import GoToCart from "./GoToCart";
 
-const ItemCount = ({ initial, stock, productID }) => {
+const ItemCount = ({
+  initial,
+  stock,
+  productID,
+  picture,
+  name_of_product,
+  price,
+}) => {
   const [cartState, setCartState] = useState(false);
 
   return (
@@ -13,6 +20,9 @@ const ItemCount = ({ initial, stock, productID }) => {
           initial={initial}
           stock={stock}
           productID={productID}
+          picture={picture}
+          name_of_product={name_of_product}
+          price={price}
           setCartState={setCartState}
         />
       ) : (

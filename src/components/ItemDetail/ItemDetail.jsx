@@ -2,6 +2,7 @@ import React from "react";
 // import { useParams } from "react-router";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import PriceFormat from "../PriceFormat/PriceFormat";
 
 const ItemDetail = ({
   id,
@@ -30,27 +31,38 @@ const ItemDetail = ({
                     <h1>{name_of_product}</h1>
                   </div>
                   <div className="col">
-                    <h2 className="price text-end fw-bolder">{price}</h2>
+                    <h2 className="price text-end fw-bolder">
+                      <PriceFormat number={price} />
+                    </h2>
                   </div>
                 </div>
                 <div className="d-flex justify-content-between">
-                  <span className="tags d-flex align-items-center">
-                    Categorias:{" "}
-                    {tags.map((tag, index) => (
-                      <Link key={index} to={`/categoria/${tag}`}>
-                        <span className="badge bg-warning text-dark">
-                          {tag}
-                        </span>
-                      </Link>
-                    ))}
-                  </span>
+                  {tags && (
+                    <span className="tags d-flex align-items-center">
+                      Categorias:{" "}
+                      {tags.map((tag, index) => (
+                        <Link key={index} to={`/categoria/${tag}`}>
+                          <span className="badge bg-warning text-dark">
+                            {tag}
+                          </span>
+                        </Link>
+                      ))}
+                    </span>
+                  )}
                   <span className="author">
                     Autor: <em>{autor}</em>
                   </span>
                 </div>
               </div>
               <div className="mt-auto">
-                <ItemCount stock={stock} initial={1} productID={id} />
+                <ItemCount
+                  stock={stock}
+                  initial={1}
+                  productID={id}
+                  picture={picture}
+                  name_of_product={name_of_product}
+                  price={price}
+                />
               </div>
             </div>
           </div>

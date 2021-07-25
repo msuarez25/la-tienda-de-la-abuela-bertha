@@ -1,32 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { database } from "../../firebase/firebase";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router";
 
 const ItemDetailContainer = () => {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [productos, setProduct] = useState([]);
-  const url = "/assets/productos/productos.json";
+  const [productos, setProductos] = useState([]);
   const { id } = useParams();
-
   const getProduct = () => {
-    fetch(url)
-      .then((response) => response.json())
-      .then(
-        (data) => {
-          setIsLoaded(true);
-          let product = data.filter((producto) => getProductByID(producto, id));
-          setProduct(product);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-  };
+    let products;
+    if (id !== undefined) {
+      products = database.collection("productos").doc(id);
+    }
 
-  const getProductByID = (product, productID) => {
-    return product.id === productID;
+    products.get().then((query) => {
+      console.log(query.data());
+      setProductos({ ...query.data(), id: query.id });
+    });
   };
 
   useEffect(() => {
@@ -34,28 +23,20 @@ const ItemDetailContainer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
-    return <div>Loading...</div>;
-  } else {
-    return (
-      <div className="product-detail mb-5">
-        {productos.map((producto) => (
-          <ItemDetail
-            key={producto.id}
-            id={producto.id}
-            price={producto.price}
-            picture={producto.picture}
-            name_of_product={producto.name_of_product}
-            tags={producto.tags}
-            stock={producto.stock}
-            description={producto.description}
-            autor={producto.author}
-          />
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div className="product-detail mb-5">
+      <ItemDetail
+        key={productos.id}
+        id={productos.id}
+        price={productos.price}
+        picture={productos.picture}
+        name_of_product={productos.name_of_product}
+        tags={productos.tags}
+        stock={productos.stock}
+        description={productos.description}
+        autor={productos.author}
+      />
+    </div>
+  );
 };
 export default ItemDetailContainer;
