@@ -80,3 +80,15 @@ footer.footer {
     opacity: 1;
   }
 }
+
+.cartItem {
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.cartItem img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+}

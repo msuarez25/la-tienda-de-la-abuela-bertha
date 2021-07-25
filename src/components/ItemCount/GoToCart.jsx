@@ -8,12 +8,12 @@ const GoToCart = ({ productID, setCartState }) => {
 
   const removeProductByID = (id) => {
     return cartObj.products.filter((obj) => {
-      return obj.id != id;
+      return obj.id !== id;
     });
   };
   const editAmount = () => {
     setCartState(false);
-    console.log(removeProductByID(productID));
+    // console.log(removeProductByID(productID));
     setCartObj({
       products: removeProductByID(productID),
     });

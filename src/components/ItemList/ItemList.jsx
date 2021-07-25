@@ -1,59 +1,70 @@
 import React, { useState, useEffect } from "react";
+import { database } from "../../firebase/firebase";
 import Item from "../Item/Item";
 import { useParams } from "react-router";
 
 const ItemList = () => {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [order, setOrder] = useState("desc");
+  const [orderBy, setOrderBy] = useState("price");
   const [productos, setProductos] = useState([]);
   const [title, setTitle] = useState("Bienvenid@");
   const { tags } = useParams();
-  const url = "/assets/productos/productos.json";
 
-  const getProductos = () => {
-    fetch(url)
-      .then((response) => response.json())
-      .then(
-        (data) => {
-          setIsLoaded(true);
-          let productsByCategory;
-          if (tags !== undefined) {
-            productsByCategory = data.filter((producto) =>
-              getProductByTag(producto, tags)
-            );
-            setTitle(tags);
-          } else {
-            productsByCategory = data;
-            setTitle("Bienvenid@");
-          }
-          setProductos(productsByCategory);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
+  const changeOrder = (e) => {
+    setOrder(e.target.value);
+  };
+  const changeOrderBy = (e) => {
+    setOrderBy(e.target.value);
   };
 
-  const getProductByTag = (product, tags) => {
-    if (product.tags.indexOf(tags) !== -1) {
-      return true;
+  const getProductos = () => {
+    let products;
+    if (tags !== undefined) {
+      products = database
+        .collection("productos")
+        .where("tags", "array-contains", tags)
+        .orderBy(orderBy, order);
+      setTitle(tags);
+    } else {
+      products = database.collection("productos").orderBy(orderBy, order);
+      setTitle("Bienvenid@");
     }
+
+    products.get().then((query) => {
+      setProductos(
+        query.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        })
+      );
+    });
   };
 
   useEffect(() => {
     getProductos();
     // eslint-disable-next-line
-  }, [tags]);
+  }, [tags, order, orderBy]);
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
-    return <div>Loading...</div>;
-  } else {
-    return (
+  return (
+    <div className="container">
       <div className="wrapper">
         <h1 className="text-center mt-5">{title}</h1>
+        {tags === undefined && (
+          <div className="d-flex justify-content-end py-3">
+            <span className="d-inline-block me-2">Ordenar por:</span>
+            <select
+              className="orderBy me-1"
+              value={orderBy}
+              onChange={changeOrderBy}
+            >
+              <option value="price">Precio</option>
+              <option value="name_of_product">Nombre</option>
+            </select>
+            <select className="order" value={order} onChange={changeOrder}>
+              <option value="asc">Asc</option>
+              <option value="desc">Desc</option>
+            </select>
+          </div>
+        )}
         <ul className="product-list row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
           {productos.map((producto) => (
             <Item
@@ -68,7 +79,7 @@ const ItemList = () => {
           ))}
         </ul>
       </div>
-    );
-  }
+    </div>
+  );
 };
 export default ItemList;

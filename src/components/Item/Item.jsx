@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
+import PriceFormat from "../PriceFormat/PriceFormat";
 
 const Item = ({ id, price, picture, name_of_product, tags, stock }) => {
   return (
@@ -27,12 +28,21 @@ const Item = ({ id, price, picture, name_of_product, tags, stock }) => {
                 </span>
               </div>
               <div className="col text-end">
-                <strong className="price">{price}</strong>
+                <strong className="price">
+                  <PriceFormat number={price} />
+                </strong>
               </div>
             </div>
           </div>
           <div className="counter mt-auto">
-            <ItemCount stock={stock} initial={1} productID={id} />
+            <ItemCount
+              stock={stock}
+              initial={1}
+              productID={id}
+              picture={picture}
+              name_of_product={name_of_product}
+              price={price}
+            />
           </div>
         </div>
       </div>
