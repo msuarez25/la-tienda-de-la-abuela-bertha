@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 // import { Context } from "../../Context/Context";
-import AddAmount from "./AddAmount";
-import GoToCart from "./GoToCart";
+import AddAmount from './AddAmount';
+import GoToCart from './GoToCart';
 
 const ItemCount = ({
   initial,
@@ -14,7 +14,7 @@ const ItemCount = ({
   const [cartState, setCartState] = useState(false);
 
   return (
-    <div className="col-sm-12 p-2 mx-auto text-center">
+    <div className='col-sm-12 p-2 mx-auto text-center'>
       {!cartState ? (
         <AddAmount
           initial={initial}

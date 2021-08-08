@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { database } from "../../firebase/firebase";
-import ItemDetail from "../ItemDetail/ItemDetail";
-import { useParams } from "react-router";
+import React, { useState, useEffect } from 'react';
+import { database } from '../../firebase/firebase';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams } from 'react-router';
 
 const ItemDetailContainer = () => {
   const [productos, setProductos] = useState([]);
@@ -9,11 +9,10 @@ const ItemDetailContainer = () => {
   const getProduct = () => {
     let products;
     if (id !== undefined) {
-      products = database.collection("productos").doc(id);
+      products = database.collection('productos').doc(id);
     }
 
     products.get().then((query) => {
-      console.log(query.data());
       setProductos({ ...query.data(), id: query.id });
     });
   };
@@ -24,7 +23,7 @@ const ItemDetailContainer = () => {
   }, []);
 
   return (
-    <div className="product-detail mb-5">
+    <div className='product-detail mb-5'>
       <ItemDetail
         key={productos.id}
         id={productos.id}
