@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import firebase from 'firebase/app';
-import { database } from '../../../firebase/firebase';
+import { database } from '../../firebase/firebase';
+import Confirmacion from './Confirmacion';
 
-const Form = ({ cart, total, clearCart }) => {
+const Form = ({ cart, total }) => {
+  const [newOrderNum, setNewOrderNum] = useState('');
+  const [showModal, setShowModal] = useState('');
+
+  const updateNewOrderNum = (orderNum) => {
+    setNewOrderNum(orderNum);
+    setShowModal('show');
+  };
+
+  // Mi carrito estuvo hecho como objecto en un principio asi que le paso solo el array de los productos para poder mapearlo
+  const cartArray = cart['products'];
+
   const handleSubmit = (event) => {
     ///Evitamos el comportamiento default de los forms
     event.preventDefault();
 
     ///Capturamos la data del usuario
     const userData = {
-      name: event.target.nombre.value,
-      surname: event.target.apellido.value,
+      name: event.target.nombre.value + ' ' + event.target.apellido.value,
       phone: event.target.telefono.value,
       email: event.target.email.value,
     };
 
     ///Juntamos la data de la orden
     const newOrder = {
-      buyer: userData,
-      items: cart,
+      Buyer: userData,
+      items: cartArray,
       date: new Date().toString(),
       total: total,
     };
@@ -48,10 +59,10 @@ const Form = ({ cart, total, clearCart }) => {
     ///va a comprar
 
     ///Seleccionamos dichos items
-    const itemsToCheck = database.collection('items').where(
+    const itemsToCheck = database.collection('productos').where(
       firebase.firestore.FieldPath.documentId(),
       'in',
-      cart.map((item) => item.id)
+      cartArray.map((item) => item.id)
     );
 
     ///Traemos su data
@@ -68,13 +79,13 @@ const Form = ({ cart, total, clearCart }) => {
 
       query.docs.forEach((doc, index) => {
         ///Si hay stock, agregamos al batch la operación para RESTARLE al stock
-        if (doc.data().stock >= newOrder.items[index].quantity) {
+        if (doc.data().stock >= newOrder.items[index].amount) {
           ///Si el stock es MAYOR o IGUAL a la cantidad solicitada, vamos a realizar una operación
           ///Con el doc.ref, basicamente le decimos que seleccione el mismo
           batch.update(doc.ref, {
             ///La operación que vamos a hacer es RESTAR al stock del item, la cantidad pedida
             ///por el usuario
-            stock: doc.data().stock - newOrder.items[index].quantity,
+            stock: doc.data().stock - newOrder.items[index].amount,
           });
         } else {
           ///SI NO HAY STOCK, vamos a pushear el item en cuestión al array de sin stock
@@ -87,9 +98,7 @@ const Form = ({ cart, total, clearCart }) => {
         ///y vamos a EJECUTAR EL BATCH
         batch.commit().then(() => {
           ///Le avisamos al usuario que todo salió bien, y le damos el ID de su compra
-          alert('ORDEN GENERADA CON EXITO! \n ID: ' + orderId);
-          ///Le limpiamos el carrito automáticamente
-          clearCart();
+          updateNewOrderNum(orderId);
         });
       } else {
         ///De lo contrario, notificamos al usuario que no puede realizar la compra:
@@ -99,14 +108,72 @@ const Form = ({ cart, total, clearCart }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Finalizar Compra</h2>
-      <input placeholder='Nombre' type='text' id='nombre' />
-      <input placeholder='Apellido' type='text' id='apellido' />
-      <input placeholder='Teléfono' type='tel' id='telefono' />
-      <input placeholder='E-mail' type='email' id='email' />
-      <button type='submit'>COMPRAR</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <h2 className='mb-4'>Finalizar Compra</h2>
+        <div className='row'>
+          <div className='col-md-6 offset-md-3'>
+            <div className='row g-4'>
+              <div className='col-md-6 form-floating'>
+                <input
+                  placeholder='Nombre'
+                  type='text'
+                  className='form-control px-3'
+                  id='nombre'
+                />
+                <label className='px-4' forHTML='nombre'>
+                  Nombre
+                </label>
+              </div>
+              <div className='col-md-6 form-floating'>
+                <input
+                  placeholder='Apellido'
+                  type='text'
+                  className='form-control px-3'
+                  id='apellido'
+                />
+                <label className='px-4' forHTML='apellido'>
+                  Apellido
+                </label>
+              </div>
+              <div className='col-md-6 form-floating'>
+                <input
+                  placeholder='Teléfono'
+                  type='tel'
+                  className='form-control px-3'
+                  id='telefono'
+                />
+                <label className='px-4' forHTML='telefono'>
+                  Teléfono
+                </label>
+              </div>
+              <div className='col-md-6 form-floating'>
+                <input
+                  type='email'
+                  className='form-control px-3'
+                  id='email'
+                  placeholder='E-mail'
+                />
+                <label className='px-4' forHTML='email'>
+                  E-mail
+                </label>
+              </div>
+            </div>
+            <div className='col-md-12 mt-4'>
+              <button className='btn btn-lg btn-warning' type='submit'>
+                COMPRAR
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <Confirmacion
+        orderId={newOrderNum}
+        total={total}
+        show={showModal}
+        setShowModal={setShowModal}
+      />
+    </>
   );
 };
 

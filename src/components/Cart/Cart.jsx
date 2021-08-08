@@ -35,18 +35,8 @@ const Cart = () => {
           <div className='totalCart py-5 text-center row justify-content-end fw-bold align-items-center'>
             <div className='col-2'>TOTAL A PAGAR</div>
             <div className='col-2'>{totalCart(false)}</div>
-            <div className='col-2'>
-              <Form />
-              {/* <Link
-                to={{
-                  pathname:
-                    `https://www.paypal.com/paypalme/msuarez25/` +
-                    totalCart(true),
-                }}
-                target="_blank"
-              >
-                <button className="btn btn-warning">PAGAR</button>
-              </Link> */}
+            <div className='col-12 mt-5'>
+              <Form cart={cartObj} total={totalCart(true)} />
             </div>
           </div>
         </>

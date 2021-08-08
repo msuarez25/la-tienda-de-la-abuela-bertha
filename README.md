@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# La Tienda de la Abuela Bertha
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React application
 
-## Available Scripts
+[![Powered by react](<https://firebasestorage.googleapis.com/v0/b/la-tienda-de-la-abuela-b-957e8.appspot.com/o/pbreact%20(1).png?alt=media&token=d164ffee-6045-40e2-bc17-93cc456018cb>)](https://reactjs.org/)
 
-In the project directory, you can run:
+**La Tienda de la Abuela Bertha** is a ecommerce site designed for artist Bertha Suarez who sell her incredibles artcraft.
 
-### `yarn start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- SPA
+- Responsive
+- User Friendly
+- Easy checkout
+- Filter by Categories
+- Order by name or price
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This is also a final test for Coderhouse React Course
+[CoderHouse]
 
-### `yarn test`
+[![La Tienda de la Abuela Bertha](https://firebasestorage.googleapis.com/v0/b/la-tienda-de-la-abuela-b-957e8.appspot.com/o/ltdlab.gif?alt=media&token=bd56cf4b-5455-4613-8858-77cfabeee813)](https://latiendadelaabuelabertha.netlify.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> Make with love
+> with brand new react skills
 
-### `yarn build`
+## Tech
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**La Tienda de la Abuela Bertha** uses a number of open source projects to work properly:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [ReactJS] - A JavaScript library for building user interfaces
+- [Twitter Bootstrap] - The world’s most popular front-end open source toolkit
+- [node.js]: JavaScript runtime built on Chrome's V8 JavaScript engine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+And of course La Tienda de la Abuela Bertha itself is open source with a [public repository]
+on GitHub.
 
-### `yarn eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**La Tienda de la Abuela Bertha** requires [Node.js](https://nodejs.org/) v10+ to run.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install the dependencies and devDependencies and start the server.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+cd la-tienda-de-la-abuela-bertha
+npm i
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Add-Ons
 
-## Learn More
+**La Tienda de la Abuela Bertha** is currently extended with the following plugins.
+Instructions on how to use them in your own application are linked below.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Add-ons          | Description                                                                               |
+| ---------------- | ----------------------------------------------------------------------------------------- |
+| [React Router]   | Collection of navigational components that compose declaratively with your application    |
+| [Firebase]       | Backed by Google and loved by app development teams - from startups to global enterprises |
+| [React Spinners] | A collection of loading spinners with React.js based on Halogen.                          |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Building for source
 
-### Code Splitting
+For production release:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```sh
+npm run build
+```
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+MIT
 
-### Making a Progressive Web App
+**Free Software, Hell Yeah!**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[//]: # "These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax"
+[git-repo-url]: https://github.com/msuarez25/la-tienda-de-la-abuela-bertha
+[coderhouse]: https://www.coderhouse.com/
+[node.js]: http://nodejs.org
+[twitter bootstrap]: http://twitter.github.com/bootstrap/
+[reactjs]: https://reactjs.org/
+[react router]: https://reactrouter.com/
+[react spinners]: https://github.com/davidhu2000/react-spinners
+[firebase]: https://firebase.google.com/
+[public repository]: https://github.com/msuarez25/la-tienda-de-la-abuela-bertha
